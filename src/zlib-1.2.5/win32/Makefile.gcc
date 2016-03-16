@@ -35,12 +35,14 @@ SHARED_MODE=0
 #LOC = -DASMV
 #LOC = -DDEBUG -g
 
-PREFIX =
+PREFIX = $(BINPREF)
+
 ifeq "$(WIN)" "64"
 CC = $(PREFIX)gcc -m64
 else
 CC = $(PREFIX)gcc -m32
 endif
+
 CFLAGS = $(LOC) -O3 -Wall
 EXTRA_CFLAGS = -DNO_VIZ -DZ_PREFIX
 
